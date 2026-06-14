@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>David Gold Buyers</title>
+<meta name="description" content="David Gold Buyers - We buy unwanted gold, platinum and silver jewellery. Free valuation, home visits available and fast confidential service.">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -14,267 +14,702 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    background:#111;
+    background:#000;
     color:#fff;
     line-height:1.6;
 }
 
-/* ===== MENU ===== */
-
-.navbar{
+header{
     background:#000;
-    border-bottom:2px solid #d4af37;
-    position:sticky;
-    top:0;
-    z-index:999;
+    padding:60px 20px;
+    text-align:center;
+    border-bottom:4px solid #d4af37;
 }
 
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 20px;
-}
-
-.logo{
-    color:#d4af37;
-    font-size:24px;
-    font-weight:bold;
-}
-
-.menu{
-    display:flex;
-    gap:30px;
-}
-
-.menu a{
-    color:#d4af37;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.menu a:hover{
+header h1{
+    font-size:2.2rem;
     color:white;
+    margin-bottom:15px;
 }
 
-/* ===== BANNER (FIXED) ===== */
-
-.banner{
-    max-width:1200px;
-    margin:20px auto;
-    padding:0 15px;
-    position:relative;
+header h2{
+    font-size:4rem;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    background:linear-gradient(
+        180deg,
+        rgba(208,156,23,1) 40%,
+        rgba(255,255,255,1) 50%,
+        rgba(208,156,23,1) 60%
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.banner img{
-    width:100%;
-    border-radius:12px;
-    display:block;
+header p{
+    font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
 }
 
-/* 🚫 BLOCK CLICK ON ENTIRE BANNER */
-.banner, .banner *{
-    pointer-events:none;
+.header-main{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:url('jewelry.png') no-repeat center center;
+    background-size:cover;
 }
 
-/* ===== PHONE TEXT ===== */
+/* WHATSAPP BUTTON */
 
-.banner-text{
-    position:absolute;
-    bottom:6%;
-    left:6%;
-    color:#fff;
-    font-size:1.3rem;
+.overlay-button{
+    display:flex;
+    width:fit-content;
+    margin:24px auto;
+    padding:3px;
+    background-color:rgba(208,156,23,1);
+    border-radius:32px;
+}
+
+.button-whatsapp{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    background:radial-gradient(circle,
+        rgba(212,175,55,1) 0%,
+        rgba(208,156,23,1) 100%);
+    color:#000;
+    text-decoration:none;
+    font-size:22px;
     font-weight:bold;
-    text-shadow:0 0 10px rgba(0,0,0,0.9);
-    pointer-events:none;
-}
-
-/* ===== ONLY CLICKABLE AREA (HOTSPOT) ===== */
-
-.banner-hotspot{
-    position:absolute;
-    bottom:6%;
-    left:6%;
-    width:220px;
-    height:80px;
-
-    pointer-events:auto;
+    padding:15px 35px;
+    border-radius:30px;
+    border:6px solid black;
+    width:100%;
     cursor:pointer;
+    transition:0.3s;
 }
 
-/* ===== SECTIONS ===== */
+.button-whatsapp:hover{
+    transform:scale(1.02);
+}
+
+.whatsapp-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:2px;
+    color:black;
+}
+
+.whatsapp-icon{
+    display:block;
+    width:100px;
+    transition:0.3s;
+}
+
+.button-whatsapp:hover .whatsapp-icon{
+    transform:rotate(-8deg) scale(1.05);
+}
+
+/* CONTENT */
 
 .section{
     max-width:1100px;
     margin:auto;
     padding:60px 20px;
+}
+
+.section h3{
+    color:#d4af37;
+    margin-bottom:20px;
+    font-size:2rem;
     text-align:center;
 }
 
-.section h2{
-    color:#d4af37;
-    margin-bottom:20px;
-}
-
-.section p{
-    color:#ddd;
-}
-
-/* ===== WHAT WE BUY ===== */
-
-.buy-grid{
+.cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
     margin-top:30px;
 }
 
-.buy-item{
+.cards-contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
     background:#1c1c1c;
     border:1px solid #d4af37;
+    padding:32px 24px;
     border-radius:10px;
-    overflow:hidden;
+    text-align:center;
 }
 
-.buy-item img{
-    width:100%;
-    height:130px;
-    object-fit:cover;
+.card-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
 }
 
-.buy-item p{
-    padding:10px;
-    color:#d4af37;
-    font-weight:bold;
+.icon{
+    width:72px;
 }
 
-/* ===== CONTACT ===== */
+.highlight{
+    background:#d4af37;
+    color:#000;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.highlight h3{
+    color:#000;
+}
 
 .contact{
     background:#000;
     text-align:center;
     padding:60px 20px;
+    border-top:4px solid #d4af37;
+}
+
+.phone{
+    margin-top:10px;
 }
 
 .phone a{
     color:#d4af37;
-    font-size:2rem;
-    text-decoration:none;
+    font-size:3rem;
     font-weight:bold;
+    text-decoration:none;
 }
 
-.whatsapp-btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#25D366;
-    color:#fff;
-    padding:15px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+.phone a:hover{
+    color:#f2d16b;
 }
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:#bbb;
+    font-size:0.9rem;
+}
+
+@media screen and (max-width:768px){
+
+    header h1{
+        font-size:1.6rem;
+    }
+
+    header h2{
+        font-size:2.8rem;
+    }
+
+    .whatsapp-icon{
+        display:none;
+    }
+
+    .header-main{
+        background:url('jewelry.png') no-repeat center center;
+        background-size:cover;
+    }
+
+    .button-whatsapp{
+        padding:12px 18px;
+        font-size:18px;
+    }
+
+    .phone a{
+        font-size:2rem;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .cards-contact{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header-main">
+    <h1>There's never been a better time to</h1>
+    <h2>Sell Your Gold</h2>
+
+    <p>
+        We buy unwanted gold, platinum and silver jewellery —
+        even a small amount could be worth up to <strong>£400</strong>.
+    </p>
+
+    <div class="overlay-button">
+        <a class="button-whatsapp"
+           href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20jewellery."
+           target="_blank">
+
+            <img src="whatsapp-svgrepo-com.svg"
+                 alt="WhatsApp"
+                 class="whatsapp-icon">
+
+            <div class="whatsapp-text">
+                <h3 style="margin:0;color:black;">CALL OR WHATSAPP DAVID</h3>
+                <h1 style="margin:0;color:black;">07768 548 837</h1>
+            </div>
+
+        </a>
+    </div>
+</header>
+
+<section class="section">
+    <h3>Why Choose Us?</h3>
+
+    <div class="cards">
+
+        <div class="card">
+            <img class="icon" src="verified.svg" alt="Experience">
+            <div class="card-text">
+                <h4>35 Years of Experience</h4>
+                <p>Trusted and professional service with decades of expertise.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="icon" src="currency.svg" alt="Valuation">
+            <div class="card-text">
+                <h4>Free Valuation</h4>
+                <p>No-obligation valuation with competitive prices paid.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="icon" src="home.svg" alt="Home Visits">
+            <div class="card-text">
+                <h4>Home Visits</h4>
+                <p>Our experts can come to you for a secure and convenient service.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="icon" src="confidential.svg" alt="Fast Payment">
+            <div class="card-text">
+                <h4>Fast Payment</h4>
+                <p>Simple process and quick payment for your precious metals.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="highlight">
+    <h3>What We Buy</h3>
+    <p>
+        Gold Jewellery • Platinum Jewellery • Silver Jewellery •
+        Broken Jewellery • Watches • Coins • Scrap Precious Metals
+    </p>
+</section>
+
+<section class="section">
+    <h3>How It Works</h3>
+
+    <div class="cards-contact">
+
+        <div class="card">
+            <div class="card-text">
+                <h4>1. Contact Us</h4>
+                <p>Call or WhatsApp to arrange a free valuation.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-text">
+                <h4>2. Free Valuation</h4>
+                <p>Receive a fair and honest assessment of your items.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-text">
+                <h4>3. Get Paid</h4>
+                <p>Accept the offer and receive payment quickly.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Gold Buyers</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    line-height:1.6;
+}
+
+header{
+    background: #000;
+    padding:60px 20px;
+    text-align:center;
+    border-bottom:4px solid #d4af37;
+}
+
+header h1{
+    font-size:2.2rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+header h2{
+    font-size:4rem;
+    color:#d4af37;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+header p{
+    font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
+}
+
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.section h3{
+    color:#d4af37;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.cards-contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background:#1c1c1c;
+    border:1px solid #d4af37;
+    padding: 32px 24px;
+    gap:16px;
+    min-width: 200px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+}
+
+.highlight{
+    background:#d4af37;
+    color:#000;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.highlight h3{
+    color:#000;
+}
+
+.contact{
+    background:#000;
+    text-align:center;
+    padding:60px 20px;
+    border-top:4px solid #d4af37;
+}
+
+.phone{
+    color:#d4af37;
+    font-size:3rem;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:#bbb;
+    font-size:0.9rem;
+}
+
+.header-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('jewelry.png') no-repeat center center;
+}
+
+.whatsapp{
+    text-align:center;
+    padding:30px 20px;
+    background:#111;
+}
+
+.button-whatsapp{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
+    background: radial-gradient(circle,rgba(212, 175, 55, 1) 0%, rgba(208, 156, 23, 1) 100%);
+    color:#000;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+    padding:15px 35px;
+    border-radius:30px;
+    border: 6px solid black;
+}
+
+.overlay-button {
+    display: flex;
+    padding: 3px 3px;
+    background-color: rgba(208, 156, 23, 1);
+    color: white;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    width: fit-content;
+    margin: 48px auto;
+}
+
+.whatsapp-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    color: black;
+}
+
+.whatsapp:hover {
+    -webkit-box-shadow:0 0 34px 11px rgba(208, 156, 23, 0.2);
+    -moz-box-shadow: 0 0 34px 11px rgba(208, 156, 23, 0.2);
+    box-shadow: 0 0 34px 11px rgba(208, 156, 23, 0.2);
+}
+
+.icon {
+    width: 72px;
+}
+
+.whatsapp-icon {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .whatsapp-icon {
+        display: none;
+    }
+
+    .header-main {
+        background: url('jewelry.png') no-repeat -1000px center;
+    }
+
+    .gradient-letter {
+        background: linear-gradient(50deg,rgba(208, 156, 23, 1) 30%, rgba(255, 255, 255, 1) 50%, rgba(208, 156, 23, 1) 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .whatsapp-icon {
+        display: block;
+    }
+
+    .header-main {
+        background: url('jewelry.png') no-repeat center center;
+    }
+
+    .gradient-letter {
+        background: linear-gradient(180deg,rgba(208, 156, 23, 1) 30%, rgba(255, 255, 255, 1) 50%, rgba(208, 156, 23, 1) 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+}
+
+.glow {
+    background-color: rgba(0,0,0,0.5);
+}
+
+/*.gradient-letter {
+    background: linear-gradient(180deg,rgba(208, 156, 23, 1) 30%, rgba(255, 255, 255, 1) 50%, rgba(208, 156, 23, 1) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    !*
+    text-shadow: rgba(208,156,23,0.6) 0 0 39px;
+    *!
+}*/
 
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav class="navbar">
-<div class="nav-container">
-    <div class="logo">David Gold Buyers</div>
-    <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#whatwebuy">What We Buy</a>
-        <a href="#contact">Contact</a>
+<header class="header-main" >
+    <h1>There's never been a better time to</h1>
+    <h2 class="gradient-letter">Sell Your Gold</h2>
+    <h3 class="glow">
+        We buy unwanted gold, platinum and silver jewellery —
+        even a small amount could be worth up to <strong>£400</strong>.
+    </h3>
+    <div class="whatsapp overlay-button">
+        <a class="button-whatsapp"
+           href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20jewellery."
+           target="_blank"
+        >
+            <img src="whatsapp-svgrepo-com.svg" alt="Whatsapp" class="whatsapp-icon" style="width: 100px">
+            <div class="whatsapp-text">
+                <h3>CALL OR WHATSAPP DAVID</h3>
+                <h1 style="color: black">07768 548 837</h1>
+            </div>
+        </a>
     </div>
-</div>
-</nav>
+</header>
 
-<!-- BANNER (FIXED ONLY HERE) -->
-<section class="banner" id="home">
+<section class="section">
+    <h3>Why Choose Us?</h3>
 
-    <img src="gold-banner.png" alt="banner">
+    <div class="cards">
+        <div class="card">
+            <img class="icon" src="verified.svg" alt="verified">
+            <div class="card-text">
+                <h4>35 Years of Experience</h4>
+                <p>Trusted and professional service with decades of expertise.</p>
+            </div>
+        </div>
 
-    <!-- visible phone text -->
-    <div class="banner-text">
-        07768 548 837
+        <div class="card">
+            <img class="icon" src="currency.svg" alt="verified">
+            <div class="card-text">
+                <h4>Free Valuation</h4>
+                <p>No-obligation valuation with competitive prices paid.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="icon" src="home.svg" alt="verified">
+            <div class="card-text">
+                <h4>Home Visits</h4>
+                <p>Our experts can come to you for a secure and convenient service.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="icon" src="confidential.svg" alt="verified">
+            <div class="card-text">
+                <h4>Fast Payment</h4>
+                <p>Simple process and quick payment for your precious metals.</p>
+            </div>
+        </div>
     </div>
+</section>
 
-    <!-- ONLY CLICKABLE HOTSPOT -->
-    <a class="banner-hotspot"
-       href="https://wa.me/447768548837?text=Hello%20David%20I%20would%20like%20a%20free%20valuation"
-       target="_blank">
+<section class="highlight">
+    <h3>What We Buy</h3>
+    <p>
+        Gold jewellery • Platinum jewellery • Silver jewellery •
+        Broken jewellery • Watches • Coins • Scrap precious metals
+    </p>
+</section>
+
+<section class="section">
+    <h3>How It Works</h3>
+
+    <div class="cards-contact">
+        <div class="card">
+            <div class="card-text">
+                <h4>1. Contact Us</h4>
+                <p>Call or WhatsApp to arrange a valuation.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-text">
+                <h4>2. Free Valuation</h4>
+                <p>Receive a fair and honest assessment of your items.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-text">
+                <h4>3. Get Paid</h4>
+                <p>Simple process and quick payment for your precious metals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h3>Call or WhatsApp David</h3>
+    <a style="text-decoration: none"
+       href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20jewellery."
+       target="_blank"
+    >
+        <div class="phone">07768 548 837</div>
     </a>
-
+    <p style="margin-top:20px;">
+        Free • No Obligation • Friendly & Confidential Service
+    </p>
 </section>
 
-<!-- ABOUT -->
-<section class="section" id="about">
-
-<h2>About Us</h2>
-<p>
-At David Gold Buyers we provide professional gold buying services with free valuations.
-</p>
-
-</section>
-
-<!-- WHAT WE BUY -->
-<section class="section" id="whatwebuy">
-
-<h2>What We Buy</h2>
-
-<div class="buy-grid">
-
-    <div class="buy-item">
-        <img src="gold-ring.jpg">
-        <p>Rings</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="gold-chain.jpg">
-        <p>Chains</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="gold-bracelet.jpg">
-        <p>Bracelets</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="gold-watch.jpg">
-        <p>Watches</p>
-    </div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-<h2>Contact David</h2>
-
-<div class="phone">
-    <a href="tel:07768548837">07768 548 837</a>
-</div>
-
-<a class="whatsapp-btn"
-   href="https://wa.me/447768548837"
-   target="_blank">
-   WhatsApp Us
-</a>
-
-</section>
+<footer>
+    ©️ 2026 David Gold Buyers. All Rights Reserved.
+</footer>
 
 </body>
 </html>
