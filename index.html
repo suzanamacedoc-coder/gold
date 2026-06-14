@@ -40,13 +40,6 @@ body{
 .logo{
     color:#d4af37;
     font-size:24px;
-    font-weight:bold;
-}
-
-.menu a{
-    color:#d4af37;
-    margin-left:20px;
-    text-decoration:none;
 }
 
 /* ===== BANNER ===== */
@@ -60,47 +53,49 @@ body{
 
 .banner img{
     width:100%;
-    border-radius:12px;
     display:block;
+    border-radius:12px;
 }
 
-/* ===== HOTSPOT ONLY ON PHONE AREA ===== */
+/* ❌ BLOCK ALL DEFAULT CLICK BEHAVIOR */
+.banner, .banner *{
+    pointer-events:none;
+}
+
+/* ===== HOTSPOT (ONLY PHONE AREA) ===== */
 
 .banner-hotspot{
     position:absolute;
 
-    /* 🔥 adjust position of clickable area */
-    top:65%;      /* vertical position */
-    left:50%;
-    transform:translate(-50%, -50%);
+    /* 👇 bottom-left position (as you said) */
+    bottom:6%;
+    left:6%;
 
-    width:260px;
-    height:80px;
+    width:180px;
+    height:70px;
 
+    pointer-events:auto; /* ONLY clickable area */
     cursor:pointer;
 }
 
-/* optional visual guide (REMOVE later if you want invisible) */
+/* optional visual debug */
 /*
 .banner-hotspot{
-    border:2px dashed red;
+    border:2px solid red;
 }
 */
 
-/* text shown on banner */
+/* ===== TEXT (optional display) ===== */
+
 .banner-text{
     position:absolute;
-    top:62%;
-    left:50%;
-    transform:translateX(-50%);
-    text-align:center;
-}
-
-.banner-phone{
-    font-size:1.4rem;
+    bottom:6%;
+    left:6%;
+    color:#fff;
     font-weight:bold;
-    color:white;
+    font-size:1.2rem;
     text-shadow:0 0 8px rgba(0,0,0,0.8);
+    pointer-events:none;
 }
 
 /* ===== SECTIONS ===== */
@@ -112,27 +107,6 @@ body{
 
 .section h2{
     color:#d4af37;
-}
-
-/* ===== WHAT WE BUY ===== */
-
-.buy-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:15px;
-}
-
-.buy-item{
-    background:#1c1c1c;
-    border:1px solid #d4af37;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.buy-item img{
-    width:100%;
-    height:130px;
-    object-fit:cover;
 }
 
 /* ===== CONTACT ===== */
@@ -164,70 +138,27 @@ body{
 
 <body>
 
-<!-- NAV -->
 <nav class="navbar">
 <div class="nav-container">
     <div class="logo">David Gold Buyers</div>
-    <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#whatwebuy">What We Buy</a>
-        <a href="#contact">Contact</a>
-    </div>
 </div>
 </nav>
 
 <!-- BANNER -->
-<section class="banner" id="home">
+<section class="banner">
 
     <img src="gold-banner.png" alt="banner">
 
-    <!-- visible text -->
+    <!-- visible phone text -->
     <div class="banner-text">
-        <div class="banner-phone">07768 548 837</div>
+        07768 548 837
     </div>
 
-    <!-- CLICKABLE HOTSPOT ONLY -->
+    <!-- ONLY CLICKABLE AREA -->
     <a class="banner-hotspot"
-       href="https://wa.me/447768548837?text=Hello%20David%20I%20would%20like%20a%20free%20valuation"
+       href="https://wa.me/447768548837?text=Hello%20David%20I%20want%20a%20valuation"
        target="_blank">
     </a>
-
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-<h2>About Us</h2>
-<p>Professional gold buyers with 35 years experience.</p>
-</section>
-
-<!-- WHAT WE BUY -->
-<section class="section" id="whatwebuy">
-<h2>What We Buy</h2>
-
-<div class="buy-grid">
-    <div class="buy-item"><img src="gold-ring.jpg"></div>
-    <div class="buy-item"><img src="gold-chain.jpg"></div>
-    <div class="buy-item"><img src="gold-bracelet.jpg"></div>
-    <div class="buy-item"><img src="gold-watch.jpg"></div>
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-<h2>Contact</h2>
-
-<div class="phone">
-    <a href="tel:07768548837">07768 548 837</a>
-</div>
-
-<a class="whatsapp-btn"
-   href="https://wa.me/447768548837"
-   target="_blank">
-   WhatsApp Us
-</a>
 
 </section>
 
