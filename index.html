@@ -24,13 +24,14 @@ body{
     line-height:1.6;
 }
 
-/* MENU */
+/* ===== MENU ===== */
+
 .navbar{
     background:#000;
     border-bottom:2px solid #d4af37;
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:999;
 }
 
 .nav-container{
@@ -57,30 +58,29 @@ body{
     color:#d4af37;
     text-decoration:none;
     font-weight:bold;
-    font-size:17px;
+    transition:0.3s;
 }
 
 .menu a:hover{
-    color:#ffffff;
+    color:white;
 }
 
-/* BANNER */
+/* ===== BANNER ===== */
 
 .banner{
     max-width:1200px;
     margin:20px auto;
-    padding:0 10px;
+    padding:0 15px;
 }
 
 .banner img{
     width:100%;
-    height:auto;
+    border-radius:12px;
     display:block;
-    border-radius:8px;
-    box-shadow:0 0 15px rgba(212,175,55,0.25);
+    box-shadow:0 0 18px rgba(212,175,55,0.25);
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 
 .section{
     max-width:1100px;
@@ -89,24 +89,27 @@ body{
 }
 
 .section h2{
-    color:#d4af37;
     text-align:center;
-    margin-bottom:30px;
-    font-size:2rem;
+    color:#d4af37;
+    margin-bottom:25px;
+    font-size:2.3rem;
 }
 
 .section p{
-    text-align:center;
     max-width:850px;
     margin:auto;
+    text-align:center;
+    color:#ddd;
     font-size:1.1rem;
 }
+
+/* ===== ABOUT CARDS ===== */
 
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-    margin-top:35px;
+    margin-top:40px;
 }
 
 .card{
@@ -122,22 +125,56 @@ body{
     margin-bottom:10px;
 }
 
-.highlight{
-    background:#d4af37;
-    color:#000;
-    padding:50px 20px;
+/* ===== WHAT WE BUY ===== */
+
+.what-we-buy{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
     text-align:center;
 }
 
-.highlight h2{
-    color:#000;
+.what-we-buy h2{
+    color:#d4af37;
+    font-size:2.3rem;
     margin-bottom:15px;
 }
 
-/* CONTACT */
+.what-text{
+    max-width:850px;
+    margin:0 auto 35px;
+    color:#ddd;
+    font-size:1.1rem;
+}
+
+.what-image img{
+    width:100%;
+    max-width:1100px;
+    border-radius:12px;
+    border:2px solid #d4af37;
+    box-shadow:0 0 18px rgba(212,175,55,0.25);
+}
+
+.what-note{
+    margin-top:35px;
+    background:#d4af37;
+    color:#000;
+    padding:25px;
+    border-radius:10px;
+    max-width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.what-note h3{
+    margin-bottom:10px;
+}
+
+/* ===== CONTACT ===== */
 
 .contact{
     background:#000;
+    margin-top:50px;
     text-align:center;
     padding:60px 20px;
 }
@@ -145,6 +182,7 @@ body{
 .contact h2{
     color:#d4af37;
     margin-bottom:20px;
+    font-size:2.2rem;
 }
 
 .phone{
@@ -159,23 +197,24 @@ body{
 }
 
 .phone a:hover{
-    color:#ffffff;
+    color:white;
 }
 
 .whatsapp-btn{
     display:inline-block;
-    margin-top:20px;
+    margin-top:25px;
     background:#d4af37;
     color:#000;
-    padding:15px 35px;
     text-decoration:none;
-    font-weight:bold;
+    padding:16px 36px;
     border-radius:8px;
     font-size:1.1rem;
+    font-weight:bold;
+    transition:0.3s;
 }
 
 .whatsapp-btn:hover{
-    background:#f0c74a;
+    background:#efc64a;
 }
 
 footer{
@@ -186,6 +225,8 @@ footer{
     font-size:0.9rem;
 }
 
+/* ===== MOBILE ===== */
+
 @media(max-width:768px){
 
     .nav-container{
@@ -194,7 +235,9 @@ footer{
     }
 
     .menu{
-        gap:20px;
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     .logo{
@@ -213,59 +256,69 @@ footer{
 <body>
 
 <!-- MENU -->
+
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo">David Gold Buyers</div>
+
+        <div class="logo">
+            David Gold Buyers
+        </div>
 
         <div class="menu">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
+            <a href="#whatwebuy">What We Buy</a>
             <a href="#contact">Contact Us</a>
         </div>
+
     </div>
 </nav>
 
 <!-- BANNER -->
+
 <section id="home" class="banner">
-    <a href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20jewellery."
-       target="_blank">
-        <img src="gold-banner.png" alt="David Gold Buyers">
+
+    <a href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20items." target="_blank">
+
+        <img src="gold-banner.png" alt="David Gold Buyers Banner">
+
     </a>
+
 </section>
 
 <!-- ABOUT -->
+
 <section id="about" class="section">
 
     <h2>About Us</h2>
 
     <p>
-        At <strong>David Gold Buyers</strong>, we offer a friendly,
-        professional and confidential service for anyone wishing to
-        sell unwanted gold, platinum and silver jewellery.
-        With years of experience and competitive prices,
-        we make the process simple and stress-free.
+        At David Gold Buyers, we offer a friendly, professional and confidential
+        service for anyone wishing to sell unwanted gold, platinum and silver items.
+        With over 35 years of experience, we provide honest valuations and
+        competitive prices in a safe and convenient way.
     </p>
 
     <div class="cards">
 
         <div class="card">
             <h3>35 Years of Experience</h3>
-            <p>Trusted and professional service.</p>
+            <p>Trusted knowledge and professional service.</p>
         </div>
 
         <div class="card">
             <h3>Free Valuation</h3>
-            <p>No-obligation and competitive offers.</p>
+            <p>No-obligation quotes with competitive offers.</p>
         </div>
 
         <div class="card">
             <h3>Home Visits</h3>
-            <p>Safe, convenient and confidential.</p>
+            <p>Convenient, secure and confidential appointments.</p>
         </div>
 
         <div class="card">
             <h3>Fast Payment</h3>
-            <p>Quick and simple process.</p>
+            <p>Simple process with prompt payment.</p>
         </div>
 
     </div>
@@ -274,14 +327,28 @@ footer{
 
 <!-- WHAT WE BUY -->
 
-<section class="highlight">
+<section id="whatwebuy" class="what-we-buy">
 
     <h2>What We Buy</h2>
 
-    <p>
-        Gold Jewellery • Platinum Jewellery • Silver Jewellery •
-        Broken Jewellery • Watches • Coins • Scrap Precious Metals
+    <p class="what-text">
+        We buy a wide range of precious metal items, whether they are new,
+        old, broken or simply no longer wanted. If you are unsure about an
+        item, just contact us for a free, no-obligation valuation.
     </p>
+
+    <div class="what-image">
+        <img src="what-we-buy.png" alt="What We Buy">
+    </div>
+
+    <div class="what-note">
+        <h3>Not Sure What You Have?</h3>
+        <p>
+            We buy gold, platinum and silver jewellery, coins, watches,
+            scrap gold and mixed precious metal items. Even a small amount
+            could be worth more than you think.
+        </p>
+    </div>
 
 </section>
 
@@ -292,20 +359,19 @@ footer{
     <h2>Contact David</h2>
 
     <div class="phone">
-        <a href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20jewellery."
-           target="_blank">
-           07768 548 837
+        <a href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20items." target="_blank">
+            07768 548 837
         </a>
     </div>
 
     <p>
-        Free • No Obligation • Friendly & Confidential Service
+        Friendly • Confidential • No Obligation • Free Valuation
     </p>
 
     <a class="whatsapp-btn"
-       href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20jewellery."
+       href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation%20for%20my%20gold%20items."
        target="_blank">
-       Call or WhatsApp David
+       Contact via WhatsApp
     </a>
 
 </section>
