@@ -14,17 +14,12 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     background:#111;
     color:#fff;
-    line-height:1.6;
 }
 
-/* ===== MENU ===== */
+/* ===== NAV ===== */
 
 .navbar{
     background:#000;
@@ -39,7 +34,6 @@ body{
     margin:auto;
     display:flex;
     justify-content:space-between;
-    align-items:center;
     padding:15px 20px;
 }
 
@@ -49,22 +43,13 @@ body{
     font-weight:bold;
 }
 
-.menu{
-    display:flex;
-    gap:30px;
-}
-
 .menu a{
     color:#d4af37;
+    margin-left:20px;
     text-decoration:none;
-    font-weight:bold;
 }
 
-.menu a:hover{
-    color:white;
-}
-
-/* ===== BANNER (UPDATED) ===== */
+/* ===== BANNER ===== */
 
 .banner{
     max-width:1200px;
@@ -77,187 +62,101 @@ body{
     width:100%;
     border-radius:12px;
     display:block;
-    box-shadow:0 0 18px rgba(212,175,55,0.25);
 }
 
-/* WhatsApp HOTSPOT ONLY NEAR PHONE AREA */
-.banner-contact{
+/* ===== HOTSPOT ONLY ON PHONE AREA ===== */
+
+.banner-hotspot{
     position:absolute;
-    bottom:18%;
+
+    /* 🔥 adjust position of clickable area */
+    top:65%;      /* vertical position */
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    width:260px;
+    height:80px;
+
+    cursor:pointer;
+}
+
+/* optional visual guide (REMOVE later if you want invisible) */
+/*
+.banner-hotspot{
+    border:2px dashed red;
+}
+*/
+
+/* text shown on banner */
+.banner-text{
+    position:absolute;
+    top:62%;
     left:50%;
     transform:translateX(-50%);
     text-align:center;
 }
 
 .banner-phone{
-    display:block;
-    color:#fff;
     font-size:1.4rem;
     font-weight:bold;
-    margin-bottom:10px;
+    color:white;
     text-shadow:0 0 8px rgba(0,0,0,0.8);
-}
-
-.banner-btn{
-    display:inline-block;
-    background:#25D366;
-    color:#fff;
-    text-decoration:none;
-    padding:10px 20px;
-    border-radius:8px;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.banner-btn:hover{
-    background:#1ebd5a;
 }
 
 /* ===== SECTIONS ===== */
 
 .section{
-    max-width:1100px;
-    margin:auto;
     padding:60px 20px;
+    text-align:center;
 }
 
 .section h2{
-    text-align:center;
-    color:#d4af37;
-    margin-bottom:25px;
-    font-size:2.3rem;
-}
-
-.section p{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    color:#ddd;
-    font-size:1.1rem;
-}
-
-/* ===== CARDS ===== */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-top:40px;
-}
-
-.card{
-    background:#1c1c1c;
-    border:1px solid #d4af37;
-    border-radius:10px;
-    padding:25px;
-    text-align:center;
-}
-
-.card h3{
     color:#d4af37;
 }
 
 /* ===== WHAT WE BUY ===== */
 
-.what-we-buy{
-    max-width:1200px;
-    margin:auto;
-    padding:60px 20px;
-    text-align:center;
-}
-
-.what-we-buy h2{
-    color:#d4af37;
-    font-size:2.3rem;
-    margin-bottom:15px;
-}
-
-.what-text{
-    max-width:850px;
-    margin:0 auto 35px;
-    color:#ddd;
-    font-size:1.1rem;
-}
-
 .buy-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:20px;
-    margin-top:30px;
+    gap:15px;
 }
 
 .buy-item{
     background:#1c1c1c;
     border:1px solid #d4af37;
-    border-radius:12px;
+    border-radius:10px;
     overflow:hidden;
 }
 
 .buy-item img{
     width:100%;
-    height:140px;
+    height:130px;
     object-fit:cover;
-}
-
-.buy-item p{
-    padding:12px;
-    color:#d4af37;
-    font-weight:bold;
 }
 
 /* ===== CONTACT ===== */
 
 .contact{
     background:#000;
-    margin-top:50px;
     text-align:center;
     padding:60px 20px;
 }
 
-.contact h2{
-    color:#d4af37;
-    margin-bottom:20px;
-}
-
 .phone a{
     color:#d4af37;
-    font-size:2.5rem;
-    font-weight:bold;
+    font-size:2rem;
     text-decoration:none;
 }
 
 .whatsapp-btn{
     display:inline-block;
-    margin-top:25px;
-    background:#d4af37;
-    color:#000;
-    text-decoration:none;
-    padding:16px 36px;
+    margin-top:20px;
+    background:#25D366;
+    padding:15px 30px;
+    color:#fff;
     border-radius:8px;
-    font-weight:bold;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:768px){
-
-    .menu{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:15px;
-    }
-
-    .banner-contact{
-        bottom:12%;
-    }
-
-    .banner-phone{
-        font-size:1.1rem;
-    }
-
-    .phone a{
-        font-size:2rem;
-    }
+    text-decoration:none;
 }
 
 </style>
@@ -265,7 +164,7 @@ body{
 
 <body>
 
-<!-- MENU -->
+<!-- NAV -->
 <nav class="navbar">
 <div class="nav-container">
     <div class="logo">David Gold Buyers</div>
@@ -278,105 +177,59 @@ body{
 </div>
 </nav>
 
-<!-- BANNER (UPDATED CLICK AREA ONLY ON BUTTON) -->
-<section id="home" class="banner">
+<!-- BANNER -->
+<section class="banner" id="home">
 
-    <img src="gold-banner.png" alt="Gold Buyers Banner">
+    <img src="gold-banner.png" alt="banner">
 
-    <div class="banner-contact">
-        <span class="banner-phone">07768 548 837</span>
-        <a class="banner-btn"
-           href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20a%20free%20valuation."
-           target="_blank">
-           WhatsApp Now
-        </a>
+    <!-- visible text -->
+    <div class="banner-text">
+        <div class="banner-phone">07768 548 837</div>
     </div>
+
+    <!-- CLICKABLE HOTSPOT ONLY -->
+    <a class="banner-hotspot"
+       href="https://wa.me/447768548837?text=Hello%20David%20I%20would%20like%20a%20free%20valuation"
+       target="_blank">
+    </a>
 
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section class="section" id="about">
 <h2>About Us</h2>
-
-<p>
-At David Gold Buyers we provide professional gold, silver and platinum buying services.
-</p>
-
-<div class="cards">
-    <div class="card"><h3>35 Years Experience</h3></div>
-    <div class="card"><h3>Free Valuation</h3></div>
-    <div class="card"><h3>Home Visits</h3></div>
-    <div class="card"><h3>Fast Payment</h3></div>
-</div>
+<p>Professional gold buyers with 35 years experience.</p>
 </section>
 
 <!-- WHAT WE BUY -->
-<section id="whatwebuy" class="what-we-buy">
-
+<section class="section" id="whatwebuy">
 <h2>What We Buy</h2>
 
-<p class="what-text">
-Gold, silver, platinum — new, old or broken items.
-</p>
-
 <div class="buy-grid">
-
-    <div class="buy-item">
-        <img src="gold-ring.jpg">
-        <p>Rings</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="gold-chain.jpg">
-        <p>Chains</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="gold-bracelet.jpg">
-        <p>Bracelets</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="gold-watch.jpg">
-        <p>Watches</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="gold-coins.jpg">
-        <p>Coins</p>
-    </div>
-
-    <div class="buy-item">
-        <img src="scrap-gold.jpg">
-        <p>Scrap Gold</p>
-    </div>
-
+    <div class="buy-item"><img src="gold-ring.jpg"></div>
+    <div class="buy-item"><img src="gold-chain.jpg"></div>
+    <div class="buy-item"><img src="gold-bracelet.jpg"></div>
+    <div class="buy-item"><img src="gold-watch.jpg"></div>
 </div>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section class="contact" id="contact">
 
-<h2>Contact David</h2>
+<h2>Contact</h2>
 
 <div class="phone">
-    <a href="https://wa.me/447768548837" target="_blank">
-        07768 548 837
-    </a>
+    <a href="tel:07768548837">07768 548 837</a>
 </div>
 
 <a class="whatsapp-btn"
    href="https://wa.me/447768548837"
    target="_blank">
-   Contact via WhatsApp
+   WhatsApp Us
 </a>
 
 </section>
-
-<footer>
-© 2026 David Gold Buyers
-</footer>
 
 </body>
 </html>
