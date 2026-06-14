@@ -24,7 +24,7 @@ body{
     line-height:1.6;
 }
 
-/* ===== NAV ===== */
+/* ===== MENU ===== */
 
 .navbar{
     background:#000;
@@ -51,7 +51,7 @@ body{
 
 .menu{
     display:flex;
-    gap:25px;
+    gap:30px;
 }
 
 .menu a{
@@ -64,7 +64,7 @@ body{
     color:white;
 }
 
-/* ===== BANNER ===== */
+/* ===== BANNER (FIXED) ===== */
 
 .banner{
     max-width:1200px;
@@ -79,37 +79,35 @@ body{
     display:block;
 }
 
-/* 🚫 BLOQUEIA CLIQUE NO BANNER INTEIRO */
+/* 🚫 BLOCK CLICK ON ENTIRE BANNER */
 .banner, .banner *{
     pointer-events:none;
 }
 
-/* ===== HOTSPOT (SÓ TELEFONE) ===== */
+/* ===== PHONE TEXT ===== */
 
-.banner-hotspot{
-    position:absolute;
-
-    /* 👇 canto inferior esquerdo como você pediu */
-    bottom:6%;
-    left:6%;
-
-    width:200px;
-    height:80px;
-
-    pointer-events:auto;
-    cursor:pointer;
-}
-
-/* texto visual do telefone */
 .banner-text{
     position:absolute;
     bottom:6%;
     left:6%;
-    color:white;
+    color:#fff;
     font-size:1.3rem;
     font-weight:bold;
     text-shadow:0 0 10px rgba(0,0,0,0.9);
     pointer-events:none;
+}
+
+/* ===== ONLY CLICKABLE AREA (HOTSPOT) ===== */
+
+.banner-hotspot{
+    position:absolute;
+    bottom:6%;
+    left:6%;
+    width:220px;
+    height:80px;
+
+    pointer-events:auto;
+    cursor:pointer;
 }
 
 /* ===== SECTIONS ===== */
@@ -124,6 +122,10 @@ body{
 .section h2{
     color:#d4af37;
     margin-bottom:20px;
+}
+
+.section p{
+    color:#ddd;
 }
 
 /* ===== WHAT WE BUY ===== */
@@ -198,19 +200,19 @@ body{
 </div>
 </nav>
 
-<!-- BANNER -->
+<!-- BANNER (FIXED ONLY HERE) -->
 <section class="banner" id="home">
 
     <img src="gold-banner.png" alt="banner">
 
-    <!-- TELEFONE VISUAL -->
+    <!-- visible phone text -->
     <div class="banner-text">
         07768 548 837
     </div>
 
-    <!-- SÓ ESSA ÁREA É CLICÁVEL -->
+    <!-- ONLY CLICKABLE HOTSPOT -->
     <a class="banner-hotspot"
-       href="https://wa.me/447768548837?text=Hello%20David%20I%20want%20a%20free%20valuation"
+       href="https://wa.me/447768548837?text=Hello%20David%20I%20would%20like%20a%20free%20valuation"
        target="_blank">
     </a>
 
@@ -221,7 +223,7 @@ body{
 
 <h2>About Us</h2>
 <p>
-Professional gold buyers with over 35 years experience, offering free valuations and fast payments.
+At David Gold Buyers we provide professional gold buying services with free valuations.
 </p>
 
 </section>
